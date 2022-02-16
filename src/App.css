@@ -70,24 +70,6 @@ h1 {
   font-size: 24px;
 }
 
-.word {
-  display: flex;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.letter {
-  border-bottom: 3px solid #2980b9;
-  display: inline-flex;
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
-  margin: 0 3px;
-  height: 50px;
-  width: 20px;
-}
 
 .popup-container {
   background-color: rgba(0, 0, 0, 0.3);
@@ -103,11 +85,25 @@ h1 {
 }
 
 .popup {
-  background: #2980b9;
+  font-family: 'Nunito', sans-serif;
+  background:#D35400;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+}
+
+.popup.success {
+  background-color: #27ae60;
+}
+
+.popup .finalRevealWord span{
+  border: dashed 0.5px white;
+  border-bottom: 3px solid#99572b;
+  display: inline-flex;
+  padding: 10px;
+  font-size: 1.5em;
+  border-bottom: dashed 0.5px;
 }
 
 .popup button {
@@ -126,6 +122,9 @@ h1 {
 
 .popup button:focus {
   outline: 0;
+}
+.mobile-message {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -151,4 +150,30 @@ h1 {
   .figure-container {
     margin-bottom: 20px;
   }
+
+  .mobile-message {
+    font-family: 'Nunito', sans-serif;
+    display: block;
+  }
+}
+
+
+
+footer {
+  position: absolute;
+  bottom: 5px;
+  left: 0; 
+  font-family: 'Nunito', sans-serif;
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 400px; 
+  font-size: 1em;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #7a3201;
 }

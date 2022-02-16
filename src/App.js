@@ -75,6 +75,9 @@ function App() {
           <Figure wrongLetters={wrongLetters} />
           <WrongLetters wrongLetters={wrongLetters} />
           <Word selectedWord={selectedWord} correctLetters={correctLetters} />
+          <div className="mobile-message">
+            This game currently cannot be played on a mobile device.
+          </div>
         </div>
         <Popup 
           correctLetters={correctLetters} 
@@ -84,6 +87,7 @@ function App() {
           playAgain={playAgain} />
         <Notification showNotification={showNotification} />
       </div>
+
     </div>
   );
 }

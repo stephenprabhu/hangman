@@ -9,14 +9,16 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
     let playable = true;
 
     const isWon = checkIfWon(correctLetters, wrongLetters, selectedWord.word);
+    let classes = 'popup ';
     if(isWon ==='win'){
         finalMessage = 'Congratulations! You won! 😃';
-        finalMessageRevealWord = `The word was: ${selectedWord.word}`;
+        finalMessageRevealWord = `${selectedWord.word}`;
         description=selectedWord.description;
         playable = false;
+        classes+= 'success';
     } else if (isWon === 'lose'){
         finalMessage = 'Unfortunately you lost. 😕';
-        finalMessageRevealWord = `The word was: ${selectedWord.word}`
+        finalMessageRevealWord = `${selectedWord.word}`
         playable = false;
         description=selectedWord.description;
     }
@@ -24,9 +26,10 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
     useEffect(()=>setPlayable(playable));
     return     (
     <div className="popup-container" style={finalMessage !== '' ? {display:'flex'}:{}}>
-        <div className="popup">
+        <div className={classes}>
             <h2>{finalMessage}</h2>
-            <h3>{finalMessageRevealWord}</h3>
+            The word was: 
+            <h3 className="finalRevealWord"><span>{finalMessageRevealWord}</span></h3>
             <p>{description}</p>
             <button onClick={playAgain}>Play Again</button>
         </div>

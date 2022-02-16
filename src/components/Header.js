@@ -6,10 +6,6 @@ const Header = (props) => {
   const buttonClickHandler = () => {
     props.resetGame();
   }
-
-  const launchButtonClickHandler = () =>{
-    prompt();
-  }
   return (
     <>
       <h1 className={styles.heading}>
@@ -26,13 +22,6 @@ const Header = (props) => {
           className={styles["reset-button"]}
         >
           Reset Game
-        </button>
-        <button
-          type="button"
-          onClick={launchButtonClickHandler}
-          className={`${styles['keyboard_launch']} ${styles["reset-button"]}`}
-        >
-          Launch Keyboard
         </button>
       </div>
     </>
